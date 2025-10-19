@@ -9,10 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>in.learning.spectrum</groupId>
-	<artifactId>spectrum-gateway</artifactId>
+	<artifactId>spectrum-ai-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spectrum-gateway</name>
-	<description>Spectrum Gateway</description>
+	<packaging>pom</packaging>
+	<name>spectrum-ai-service</name>
+	<description>Spectrum AI Service</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -20,6 +21,10 @@
 	<developers>
 		<developer/>
 	</developers>
+	<modules>
+		<module>spectrum-ai-server</module>
+		<module>spectrum-ai-model</module>
+	</modules>
 	<scm>
 		<connection/>
 		<developerConnection/>

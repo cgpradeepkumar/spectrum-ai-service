@@ -1,4 +1,4 @@
-name: Spectrum Gateway Deploy
+name: Spectrum AI Service Deploy
 
 on:
   workflow_dispatch:
@@ -7,9 +7,9 @@ env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   GKE_CLUSTER: spectrum-cluster
   GKE_ZONE_OR_REGION: us-central1
-  DEPLOYMENT_NAME: spectrum-gateway
+  DEPLOYMENT_NAME: spectrum-ai-server
   NAMESPACE: dev
-  DOCKER_IMAGE_NAME: cgpradeepkumar/spectrum-gateway
+  DOCKER_IMAGE_NAME: cgpradeepkumar/spectrum-ai-server
   DOCKER_IMAGE_TAG: latest
 
 jobs:

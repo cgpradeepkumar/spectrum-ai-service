@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpectrumGatewayApplication {
+public class SpectrumAiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpectrumGatewayApplication.class, args);
+		SpringApplication.run(SpectrumAiApplication.class, args);
 	}
 
 }

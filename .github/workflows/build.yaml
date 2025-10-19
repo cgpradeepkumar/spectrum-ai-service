@@ -1,4 +1,4 @@
-name: Spectrum Gateway Build
+name: Spectrum AI Service Build
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 env:
   DOCKER_REGISTRY: docker.io
-  DOCKER_IMAGE_NAME: cgpradeepkumar/spectrum-gateway
+  DOCKER_IMAGE_NAME: cgpradeepkumar/spectrum-ai-server
 jobs:
   build:
     runs-on: ubuntu-latest

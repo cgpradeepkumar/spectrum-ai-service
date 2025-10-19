@@ -1,12 +1,12 @@
 replicaCount: 1
 
 image:
-  repository: cgpradeepkumar/spectrum-gateway
+  repository: cgpradeepkumar/spectrum-ai-server
   tag: latest
   pullPolicy: IfNotPresent
 
 service:
-  type: LoadBalancer
+  type: ClusterIP
   port: 8080
 
 # service account required for pub/sub, cloudsql etc
@@ -21,7 +21,7 @@ ingress:
   className: ""
   annotations: {}
   hosts:
-    - host: spectrum-gateway.local
+    - host: spectrum-ai-server.local
       paths:
         - path: /
           pathType: Prefix
