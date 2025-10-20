@@ -20,6 +20,30 @@
             <artifactId>spectrum-ai-model</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.genai</groupId>
+            <artifactId>google-genai</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.5</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -27,6 +51,17 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.4</version> <!-- use latest -->
+                <configuration>
+                    <systemPropertyVariables>
+                        <spring.profiles.active>test</spring.profiles.active>
+                    </systemPropertyVariables>
+                </configuration>
             </plugin>
         </plugins>
     </build>
