@@ -10,7 +10,7 @@ env:
   DEPLOYMENT_NAME: spectrum-ai-server
   NAMESPACE: dev
   DOCKER_IMAGE_NAME: cgpradeepkumar/spectrum-ai-server
-  DOCKER_IMAGE_TAG: latest
+  DOCKER_IMAGE_TAG: ${{ github.sha }}
 
 jobs:
   deploy:
@@ -45,7 +45,7 @@ jobs:
         run: |
           helm upgrade --install ${{ env.DEPLOYMENT_NAME }} ./charts \
             --set image.repository=${{ env.DOCKER_IMAGE_NAME }} \
-            --set image.tag=latest \
+            --set image.tag=${{ env.DOCKER_IMAGE_TAG }} \
             --set image.pullPolicy=Always \
             --namespace ${{ env.NAMESPACE }} --create-namespace
 
