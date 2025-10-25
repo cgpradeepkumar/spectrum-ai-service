@@ -48,3 +48,7 @@ jobs:
           tags: |
             ${{ env.DOCKER_IMAGE_NAME }}:${{ steps.vars.outputs.sha_tag }}
             ${{ env.DOCKER_IMAGE_NAME }}:${{ steps.vars.outputs.latest_tag }}
+
+      - name: Output image tag
+        run:
+          echo "Image tag: ${{ steps.vars.outputs.sha_tag }}"
