@@ -10,7 +10,7 @@ env:
   DEPLOYMENT_NAME: spectrum-ai-server
   NAMESPACE: dev
   DOCKER_IMAGE_NAME: cgpradeepkumar/spectrum-ai-server
-  DOCKER_IMAGE_TAG: ${{ github.sha }}
+  DOCKER_IMAGE_TAG: latest
 
 jobs:
   deploy:
@@ -49,3 +49,7 @@ jobs:
             --set image.pullPolicy=Always \
             --namespace ${{ env.NAMESPACE }} --create-namespace
 
+      - name: Force rollout restart (ensure latest image pulled)
+        run: |
+          kubectl rollout restart deployment/${{ env.DEPLOYMENT_NAME }} -n ${{ env.NAMESPACE }}
+          kubectl rollout status deployment/${{ env.DEPLOYMENT_NAME }} -n ${{ env.NAMESPACE }}
